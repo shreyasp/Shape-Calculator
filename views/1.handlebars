@@ -2,7 +2,7 @@
   <div id="step_1">
     <h4>Step 1: Select your shape</h4>
     <p>Please select the shape that you would like to calculate the area of and press the button "Go to step 2"</p>
-    <form method="post" action="2">
+    <form id="shape-select-group" method="post" action="2">
       <div class="input-group">
         <div class="input-group-addon shape-radio">
           <p><input type="radio" name="shape" value="rectangle" placeholder=""> Rectangle</p>
@@ -14,9 +14,16 @@
       <div class="input-group">
         <span class="input-group-btn shape-calc-btn">
             <button type="submit" class="btn btn-default" id="step_2">Go to Step 2</button>
-            <button type="button" class="btn btn-default" id="cancel_btn">Cancel</button>
+            <button type="button" class="btn btn-default" onclick="reset_form" id="cancel_btn">Cancel</button>
         </span>
       </div>
     </form>
   </div>
 </div>
+
+<!-- Reset form when user clicks on cancel -->
+<script type="text/javascript">
+  $('#cancel_btn').click(function(){
+    $('#shape-select-group')[0].reset();
+  });
+</script>
