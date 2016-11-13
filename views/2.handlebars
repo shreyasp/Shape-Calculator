@@ -3,15 +3,15 @@
     <h4>Step 2 : Insert your values</h4>
     <p>You have selected a <strong>{{ shape }}</strong>, please input the required variables.</p>
     <form method="post" action="3">
+      {{#each dimension_names}}
       <div class="input-group">
-        {{#each dimension_names}}
-          <span class="label label-default">
+          <span class="input-group-addon">
             {{this}}
-            <input type="text" name="{{ this }}" placeholder="Please enter value">
-            <br>
           </span>
-        {{/each}}
+          <input class="form-control" type="text" name="{{ this }}" placeholder="Please enter value">
       </div>
+      <br>
+      {{/each}}
       <br>
       <br>
       <br>
