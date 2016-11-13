@@ -1,0 +1,30 @@
+{
+  "name": "shape-calculator",
+  "version": "0.0.1",
+  "description": "Application to calculate area of the selected shape",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyasp/shapeAreaCalc.git"
+  },
+  "keywords": [
+    "Shape",
+    "Area",
+    "Calculator"
+  ],
+  "author": "Shreyas Patil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shreyasp/shapeAreaCalc/issues"
+  },
+  "homepage": "https://github.com/shreyasp/shapeAreaCalc#readme"
+}

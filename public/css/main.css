@@ -1,0 +1,46 @@
+.header_image{
+  text-align: center;
+}
+
+.description {
+  padding: 20px;
+  text-align: justify;
+}
+
+.page-title {
+  margin-top: auto;
+}
+
+.vertical-ad {
+  margin-top: 20px;
+}
+
+.header-img {
+  padding-top: 20px;
+}
+
+.shape-select{
+  padding-top: 20px;
+  padding-left: 20px;
+  border: solid;
+  border-width: thin;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.shape-radio{
+  background: white;
+  text-align: left;
+}
+
+#next_step_btn, #cancel_btn{
+  margin: 10px;
+}
+
+#cancel_btn{
+  border: None;
+}
+
+/*#step_2, #step_3{
+  visibility: hidden;
+}*/
