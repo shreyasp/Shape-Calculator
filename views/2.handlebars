@@ -1,26 +1,22 @@
 <div class="col-md-3 description shape-select calc-box-margin">
   <div id="step_2">
     <h4>Step 2 : Insert your values</h4>
-    <!-- Need to be rendered using express.get() -->
-    <p>You have selected a <b>{{ shape }}</b>, please input the required variables.</p>
-    <form class="form-inline" method="post" action="3">
+    <p>You have selected a <strong>{{ shape }}</strong>, please input the required variables.</p>
+    <form method="post" action="3">
       <div class="input-group">
         {{#each dimension_names}}
           <span class="label label-default">
             {{this}}
+            <input type="text" name="{{ this }}" placeholder="Please enter value">
+            <br>
           </span>
-          <input type="text" name="{{ this }}" placeholder="Please enter value">
-        </p>
         {{/each}}
       </div>
       <br>
       <br>
       <br>
-      <br>
       <span class="input-group-btn">
-        <button type="submit" class="btn btn-default shape-calc-btn" id="next_step_btn">Go to Step 3</button>
-      </span>
-      <span>
+        <button type="submit" class="btn btn-default shape-calc-btn" name="shape" value="{{ shape }}">Go to Step 3</button>
         <button type="button" class="btn btn-default" id="cancel_btn" onclick="window.location.href=1">Cancel</button>
       </span>
     </form>
