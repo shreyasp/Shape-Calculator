@@ -25,32 +25,31 @@ app.get('/', function(req, res, next){
   res.render('1');
 });
 
-// need to validation param middleware to handle no selection
-
 app.post('/2', function(req, res, next){
   req.assert('shape', 'Please select a shape to proceed to step - 2').notEmpty();
   var errors = req.validationErrors();
   if (errors) {
     res.status(400).send('Please select a shape to proceed to step - 2' + util.inspect(errors));
+    return;
   }
 
-
+  // Go ahead to parse the selected option for shape and render step - 2
   var shape = req.body.shape;
   var context = parser.parse_shape(shape);
   res.render('2', context);
 });
 
-// need to validation param middleware to handle no selection
 
 app.post('/3', function(req, res, next){
   var shape = req.body.shape;
 
   keys = Object.keys(req.body);
   keys.pop('shape'); //We do not need shape key from the request
-  for (var i = 0; i < keys.length; i++){
-    req.assert(keys[i], 'Please enter a numeric value').notEmpty().isInt();
-  }
 
+  // Before proceeding to render validate for empty or non-numeric inputs
+  for (var i = 0; i < keys.length; i++){
+    req.assert(keys[i], 'Please enter a numeric value').notEmpty().isDecimal();
+  }
   var errors = req.validationErrors();
   if(errors){
     res.status(400).send('Please enter numeric values to calculate the area' + util.inspect(errors));
