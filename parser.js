@@ -6,29 +6,27 @@ module.exports = {
       dimension_names: []
     };
 
-    if (shape === "rectangle") {
-      context.shape = 'Rectangle';
-      context.dimension_names = ['Length', 'Width'];
-      return context;
-    }
+    switch (shape) {
+      case 'rectangle':
+        context.shape = 'Rectangle';
+        context.dimension_names = ['Length', 'Width'];
+        break;
 
-    else if (shape === 'circle') {
-      context.shape = 'Circle';
-      context.dimension_names = ['Diameter'];
-      return context;
-    }
+      case 'circle':
+        context.shape = 'Circle';
+        context.dimension_names = ['Diameter'];
+        break;
 
-    else if (shape === 'square') {
-      context.shape = 'Square';
-      context.dimension_names = ['Length'];
-      return context;
-    }
+      case 'square':
+        context.shape = 'Square';
+        context.dimension_names = ['Length'];
+        break;
 
-    else {
-      // Ellipse. Add else if(..) in case a new object is added
-      context.shape = 'Ellipse';
-      context.dimension_names = ['Length', 'Width'];
-      return context;
+      case 'ellipse':
+        context.shape = 'Ellipse';
+        context.dimension_names = ['Length', 'Width'];
+        break;
     }
+    return context;
   }
 };
